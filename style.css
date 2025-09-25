@@ -6,8 +6,10 @@
     --cor-texto: #333;
     --cor-borda: #ddd;
     --cor-sucesso: #28a745;
-    --cor-aviso: #ffc107;
-    --cor-alerta: #dc3545;
+    --cor-sucesso-fundo: #e9f7eb;
+    --cor-sucesso-texto: #1e7e34;
+    --cor-aviso-fundo: #fff8e1;
+    --cor-aviso-texto: #856404;
     --sombra: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -104,6 +106,12 @@ button:disabled {
     animation: fadeIn 0.5s ease-in-out;
 }
 
+.resultado-section h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaço entre o ícone e o texto */
+}
+
 .resumo {
     padding: 15px;
     border-radius: 8px;
@@ -112,13 +120,14 @@ button:disabled {
     text-align: center;
     margin-bottom: 20px;
 }
-.resumo.sucesso { background-color: #e9f7eb; color: #1e7e34; }
-.resumo.aviso { background-color: #fff8e1; color: #856404; }
+.resumo.sucesso { background-color: var(--cor-sucesso-fundo); color: var(--cor-sucesso-texto); }
+.resumo.aviso { background-color: var(--cor-aviso-fundo); color: var(--cor-aviso-texto); }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
+    margin-bottom: 30px; /* Espaço entre as tabelas */
 }
 th, td {
     padding: 12px;
@@ -127,6 +136,12 @@ th, td {
 }
 th {
     background-color: var(--cor-fundo);
+}
+
+/* ***** NOVO ESTILO ADICIONADO ***** */
+#tabelaEncontradas th {
+    background-color: var(--cor-sucesso-fundo);
+    color: var(--cor-sucesso-texto);
 }
 
 .hidden { display: none; }

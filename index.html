@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
-    <link rel="shortcut icon" type="imagex/png" href="https://gslocacoesefestas.netlify.app/logo.png">
+
+    <link rel="shortcut icon" href="https://gslocacoesefestas.netlify.app/logo.png">
 </head>
 <body>
     <div class="container">
@@ -26,7 +27,7 @@
                 </div>
                 <div class="upload-box">
                     <h2>2. Extratos Bancários</h2>
-                    <p>Selecione os extratos do dia (formato CSV).</p>
+                    <p>Selecione os extratos do dia (PDF ou CSV).</p>
                     <input type="file" id="extratosFiles" accept=".csv,.pdf" multiple>
                 </div>
             </div>
@@ -40,6 +41,21 @@
                 <h2>📊 Resultado da Conciliação</h2>
                 <div id="resumo" class="resumo"></div>
                 
+                <div id="encontradasWrapper" class="hidden">
+                    <h3>✅ Vendas Conciliadas com Sucesso</h3>
+                    <table id="tabelaEncontradas">
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Forma Pgto</th>
+                                <th>Valor</th>
+                                <th>Encontrado em</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
                 <div id="naoEncontradasWrapper" class="hidden">
                     <h3>⚠️ Vendas Não Encontradas na Conta Correta</h3>
                     <table id="tabelaNaoEncontradas">
